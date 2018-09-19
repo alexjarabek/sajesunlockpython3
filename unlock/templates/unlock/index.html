@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+<h1>hello</h1>
+
+<section id="about" class="section-bg">
+    <div class="container-fluid">
+        <div class="class-hearder" style="text-align: center;">
+            <h3 class="section-title"> How to Unlock </h3>
+            <span class="section-divider"></span>
+            <p class="section-description">
+                    Tell the user how to unlock our phone iste natus error sit voluptatem accusantium doloremque<br>
+                    sunt in culpa qui officia deserunt mollit anim id est laborum
+                  </p>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-6 content wow fadeInRight">
+                        <!--put content here-->
+                      <form action="payment.php" id="conf" method="post">
+                        <div class="form-group">
+                         <select class="form-control" id="exampleFormControlSelect1" name="phone_name">
+                          <option selected value="0">Select your phone..</option>
+                          <option value=ALCATEL>ALCATEL</option>
+                         </select>
+                          <small id="emailHelp" class="form-text text-muted"> Example Samsung </small>
+                        </div>
+                        <div class="form-group">
+                          <select class="form-control" name="phone_model">
+                          <option selected value="0">Select models...</option>
+                          <option value="At&t">....</option>
+                          <option value="Cricket">...</option>
+                          <small id="emailHelp" class="form-text text-muted"> Example ZMAX Pro </small>
+                        </select>
+                        </div>
+                        <div class="form-group">
+                          <label for="ExampleFormControlSelect1">Select carriers</label>
+                          <select class="form-control" id="exampleFormControlSelect1" name="phone_carrier">
+                            <option value="At&T">AT&T</option>
+                            <option value="Cricket">Cricket</option>
+                            <option value="Tmobile">T-mobile</option>
+                            <option value=".....">.....</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1"> Emei </label>
+                          <input type="number" id="imei" name="phone_imei" autocomplete="off" class="form-control" placeholder="IMEI"/>
+                          <small id="emailHelp" class="form-text text-muted"> 15 digit 109283732902318 </small>
+                        </div>
+                        <button class="btn btn-primary" value="submit"> Submit </button>
+                      </form>
+                  </div>
+
+                  <div class="col-lg-6 content wow fadeInLeft">
+                    <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elite storium paralate</h2>
+                    <h3>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+
+                    <ul>
+                      <li><i class="ion-android-checkmark-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                      <li><i class="ion-android-checkmark-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+                      <li><i class="ion-android-checkmark-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+                    </ul>
+
+                       <p>
+                          Ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                           Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum Libero justo laoreet sit amet cursus sit amet dictum sit. Commodo sed egestas egestas fringilla phasellus faucibus scelerisque eleifend donec
+                       </p>
+                   </div>
+                 </div>
+            </div>
+     </section>
+    </main>
+{% endblock %}
