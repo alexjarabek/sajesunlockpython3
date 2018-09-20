@@ -22,8 +22,10 @@
                       <form action="payment.php" id="conf" method="post">
                         <div class="form-group">
                          <select class="form-control" id="exampleFormControlSelect1" name="phone_name">
-                          <option selected value="0">Select your phone..</option>
-                          <option value=ALCATEL>ALCATEL</option>
+                          <option selected value="">Select your phone..</option>
+                           {% for item in phones %}
+                          <option value= {{ item.id }} >{{ item.name }}</option>
+                           {% endfor %}
                          </select>
                           <small id="emailHelp" class="form-text text-muted"> Example Samsung </small>
                         </div>
