@@ -1,0 +1,44 @@
+{% extends 'unlock/base.html' %}
+
+{% block title %} price {% endblock %}
+
+{% block body %}
+    <div class="container">
+
+        <div class="row">
+
+          <!-- Blog Entries Column -->
+          <div class="col-md-8">
+
+            <h1 class="my-4">Prix de déverrouillage
+              <small>Tout les telephones disponibles ici </small>
+            </h1>
+
+          </div>
+        </div>
+
+    <table class="table table-striped table-dark">
+      <thead>
+        <tr>
+          <th scope="col">Phones name</th>
+          <th scope="col">Carriers</th>
+          <th scope="col">Prices</th>
+          <th scope="col">Times </th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for info in prices %}
+        <tr>
+          <td>{{ info.name }}</td>
+          <td>{{ info.network}}</td>
+          <td>{{ info.price }} USD </td>
+          <td> 2 jour </td>
+        {% endfor %}
+        </tr>
+      </tbody>
+    </table>
+
+
+</div>
+
+{% endblock %}

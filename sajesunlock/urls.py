@@ -20,5 +20,5 @@ from unlock import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('unlock.urls')),
-    path('blog', include('blog.urls')),
+    path('blog/', include('blog.urls')),
 ]

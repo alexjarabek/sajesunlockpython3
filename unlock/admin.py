@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import  Phones , Carriers , Models, Info, histories
+from .models import  Phones , Carriers , Models, Info, histories, Price
 
 # Register your models here.
 
@@ -17,6 +17,7 @@ class historiesAdmin(admin.ModelAdmin):
     search_fields = ('imei', 'email', 'number')
 
 admin.site.register(Phones)
+admin.site.register(Price)
 admin.site.register(Carriers)
 admin.site.register(Models, ModelsAdmin)
 admin.site.register(Info)

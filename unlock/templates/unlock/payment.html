@@ -1,0 +1,98 @@
+{% extends 'unlock/base.html' %}
+{% load static %}
+
+{% block title %} payment {% endblock %}
+
+{% block body %}
+
+<div class="container">
+
+    <div class="row">
+
+      <!-- Blog Entries Column -->
+      <div class="col-md-8">
+
+        <h1 class="my-4">Choisir la methode qui vous convient
+          <small>Tout code ou unlock server no trouver seront remboursee !  </small>
+        </h1>
+
+      </div>
+    </div>
+
+  {% for i in info %}
+  <p> <h3> votre telephone est : {{ i.models }} , Imei : {{ imei }}.</h3> </p>
+  <p> <h4> vous devez payez {{ i.price }} dollars pour deverouillez votre portable.</h4> </p>
+  <p> <h5> le telephone sera deboquer dans {{ i.time }} jour .</h5> </p>
+  {% endfor %}
+  <h3> {{ name }}</h3>
+
+  <a href="{% url 'local' %}" class="btn btn-primary">MonCash &rarr;</a>
+
+</div>
+
+  <!--==========================
+   payment we can resevoir
+ ============================-->
+    <!--==========================
+   Clients
+ ============================-->
+ <section id="clients">
+   <div class="container">
+
+     <div class="row wow fadeInUp">
+
+       <div class="col-md-2">
+         <a href="https://www.zte.com" > <img src="{% static 'img/clients/zte.png' %}" alt=""> </a>
+       </div>
+
+       <div class="col-md-2">
+         <a href="https://www.samsung.com" > <img src="{% static 'img/clients/samsung.png' %}" alt=""> </a>
+       </div>
+
+       <div class="col-md-2">
+         <a href="#" > <img src="{% static 'img/clients/lg.png' %}" alt=""></a>
+       </div>
+
+       <div class="col-md-2">
+         <img src="{% static 'img/clients/htc.png' %}" alt="">
+       </div>
+
+       <div class="col-md-2">
+         <img src="{% static 'img/clients/alcatel.jpg' %}" alt="">
+       </div>
+
+       <div class="col-md-2">
+         <a href="https://www.apple.com" > <img src="{% static 'img/clients/apple.png' %}" alt="apple.png"> </a>
+       </div>
+
+       <div class="col-md-2">
+       <a href="https://www.metropcs.com/"> <img src="{% static 'img/clients/MetroPCS.jpg' %}"  alt=""></a>
+       </div>
+
+       <div class="col-md-2">
+         <a href="https://verizon.com/"> <img src="{% static 'img/clients/vzw.jpg' %}" alt=""> </a>
+       </div>
+
+       <div class="col-md-2">
+         <a href="https://www.t-mobile.com" ><img src="{% static 'img/clients/tmobile.gif' %}" alt=""> </a>
+       </div>
+
+       <div class="col-md-2">
+         <a href="https://www.cricketwireless.com/"> <img src="{% static 'img/clients/cricket.jpg' %}" alt=""> </a>
+       </div>
+
+       <div class="col-md-2">
+         <a href="https://www.att.com" ><img src="{% static 'img/clients/att.gif' %}" alt=""> </a>
+       </div>
+
+       <div class="col-md-2">
+         <a href="https://www.sprint.com"> <img src="{% static 'img/clients/sprint.png' %}" alt=""> </a>
+       </div>
+
+     </div>
+
+     </div>
+ </section><!-- #more-features -->
+
+
+{% endblock %}

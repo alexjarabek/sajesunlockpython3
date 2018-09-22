@@ -22,31 +22,36 @@
                 <div class="row">
                   <div class="col-lg-6 content wow fadeInRight">
                         <!--put content here-->
-                      <form action="payment.html" id="conf" method="post">
+                      <form action="{% url 'payment' %}" id="conf" method="post">
+                         {% csrf_token %}
+
                         <div class="form-group">
                          <select class="form-control" id="exampleFormControlSelect1" name="phone_name">
                           <option selected value="">Select your phone..</option>
-                           {% for item in phones %}
-                          <option value= {{ item.id }} >{{ item.name }}</option>
+                           {% for name in phones %}
+                          <option value= "{{ name.id }}" > {{ name.name }} </option>
                            {% endfor %}
                          </select>
                           <small id="emailHelp" class="form-text text-muted"> Example Samsung </small>
                         </div>
+
                         <div class="form-group">
                           <select class="form-control" name="phone_model">
-                          <option selected value="0">Select models...</option>
-                          <option value="At&t">....</option>
-                          <option value="Cricket">...</option>
+                          <option selected value="">Select models...</option>
+                          {% for model in models %}
+                          <option value="{{ model.carrier }}"> {{ model.model}} </option>
+                          {% endfor %}
                           <small id="emailHelp" class="form-text text-muted"> Example ZMAX Pro </small>
                         </select>
                         </div>
+
                         <div class="form-group">
                           <label for="ExampleFormControlSelect1">Select carriers</label>
                           <select class="form-control" id="exampleFormControlSelect1" name="phone_carrier">
-                            <option value="At&T">AT&T</option>
-                            <option value="Cricket">Cricket</option>
-                            <option value="Tmobile">T-mobile</option>
-                            <option value=".....">.....</option>
+                            <option selected value="">Select Carrier </option>
+                          {% for carrier in carriers %}
+                            <option value="{{ carrier.id }}">{{ carrier.carrier }}</option>
+                          {% endfor %}
                           </select>
                         </div>
                         <div class="form-group">
@@ -355,6 +360,7 @@
              <div id="sendmessage">Your message has been sent. Thank you!</div>
              <div id="errormessage"></div>
              <form action="" method="post" role="form" class="contactForm">
+               {% csrf_token %}
                <div class="form-row">
                  <div class="form-group col-lg-6">
                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />

@@ -41,3 +41,11 @@ class histories(models.Model):
 
     def __str__(self):
         return f"{self.info} the imei is {self.imei} l'email ou le numero du cllient est {self.email} || {self.number} date {self.date} id pay {self.idpay}"
+
+class Price(models.Model):
+    name = models.CharField(max_length=64)
+    network = models.CharField(max_length=64)
+    price = models.IntegerField()
+
+    def __str__(self):
+        return f'{self.name} , {self.network}, {self.price} Usd'

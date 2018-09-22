@@ -1,9 +1,17 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
+from .models import Article, Categories
 
 # Create your views here.
 def index(request):
-    return render(request ,"index.html")
+    article = Article.objects.all()
 
-def articles(request):
-    return render(request ,'article.html')
+    return render(request ,"index.html", {"article":article})
+
+def articles(request, slug):
+    try:
+        article = Article.objects.get(slug=slug)
+    except Article.DoesNotExist:
+        raise Http404
+
+    return render(request ,'article.html', {'article': article})

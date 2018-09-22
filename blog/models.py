@@ -5,7 +5,7 @@ class Article(models.Model):
     auteur = models.CharField(max_length=64)
     titre = models.CharField(max_length=64)
     contenu = models.TextField(null=False)
-    slug  = models.SlugField(max_length=50, null=False)
+    slug  = models.SlugField(max_length=50, null=False, unique=True)
     date = models.DateTimeField(default=timezone.now,
                                 verbose_name="Date de parution")
 
@@ -18,7 +18,8 @@ class Article(models.Model):
         return self.titre
 
 class Categories(models.Model):
-    Categorie = models.CharField(max_length=64)
+    name = models.CharField(max_length=64)
+    article = models.ForeignKey(Article, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.categorie
+        return self.name
