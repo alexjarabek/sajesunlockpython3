@@ -46,6 +46,7 @@ class Price(models.Model):
     name = models.CharField(max_length=64)
     network = models.CharField(max_length=64)
     price = models.IntegerField()
+    time = models.IntegerField()
 
     def __str__(self):
         return f'{self.name} , {self.network}, {self.price} Usd'

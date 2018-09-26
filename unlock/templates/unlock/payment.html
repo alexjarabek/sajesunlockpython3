@@ -12,21 +12,22 @@
       <!-- Blog Entries Column -->
       <div class="col-md-8">
 
-        <h1 class="my-4">Choisir la methode qui vous convient
-          <small>Tout code ou unlock server no trouver seront remboursee !  </small>
+        <h1  class="text-success">Choisir la methode qui vous convient
+          <small class="text-secondary">Tout code ou unlock server no trouver seront remboursee !  </small>
         </h1>
 
       </div>
     </div>
 
   {% for i in info %}
-  <p> <h3> votre telephone est : {{ i.models }} , Imei : {{ imei }}.</h3> </p>
+  <p > <h3 class="text-primary"> votre telephone est : {{ i.models }} , Imei : {{ imei }}.</h3> </p>
   <p> <h4> vous devez payez {{ i.price }} dollars pour deverouillez votre portable.</h4> </p>
   <p> <h5> le telephone sera deboquer dans {{ i.time }} jour .</h5> </p>
   {% endfor %}
   <h3> {{ name }}</h3>
 
-  <a href="{% url 'local' %}" class="btn btn-primary">MonCash &rarr;</a>
+  <a href="{% url 'local' %}" class="btn btn-danger">MonCash &rarr;</a>
+  <a href="{% url 'paypal' %}" class="btn btn-primary">paypal &rarr;</a>
 
 </div>
 

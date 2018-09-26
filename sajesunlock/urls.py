@@ -15,10 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path , include
+from django.conf.urls import url
 from unlock import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('unlock.urls')),
     path('blog/', include('blog.urls')),
+    url(r'^paypal/', include('paypal.standard.ipn.urls')),
 ]

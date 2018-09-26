@@ -38,8 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'unlock.apps.UnlockConfig',
-    'blog',
+    'blog.apps.BlogConfig',
+    'paypal.standard.ipn',
 ]
+
+PAYPAL_TEST = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

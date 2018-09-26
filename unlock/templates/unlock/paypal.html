@@ -1,0 +1,25 @@
+{% extends 'unlock/base.html' %}
+{% load static %}
+
+{% block title %} payment {% endblock %}
+
+{% block body %}
+
+<div class="container">
+
+    <div class="row">
+
+      <!-- Blog Entries Column -->
+      <div class="col-md-8">
+
+        <h1  class="text-success">Choisir la methode qui vous convient
+          <small class="text-secondary">Tout code ou unlock server no trouver seront remboursee !  </small>
+        </h1>
+
+      </div>
+    </div>
+    <h1>Show me the money!</h1>
+<!-- writes out the form tag automatically -->
+      {{ form.render }}
+</div>
+{% endblock %}

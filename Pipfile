@@ -9,6 +9,9 @@ gunicorn = "*"
 django-heroku = "*"
 django-paypal = "*"
 paypalrestsdk = "*"
+dj-database-url = "*"
+"psycopg2" = "*"
+whitenoise = "*"
 
 [dev-packages]
 
